@@ -51,7 +51,7 @@ const getBook = async (request, response) => {
             return response.status(404).json({message: "Book Not Found!"})
         }
 
-        return response.status(200).json({book})
+        return response.status(200).json(book)
 
     } catch (error) {
         console.log(error.message)
