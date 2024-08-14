@@ -22,7 +22,8 @@ const createBook = async (request, response) => {
         return response.status(200).json(book)
         
     } catch (error) {
-        response.status(500).json({message: error.message})
+        console.log(error.message)
+        return response.status(500).json({message: error.message})
     }
 }
 
@@ -53,7 +54,7 @@ const getBook = async (request, response) => {
         return response.status(200).json({book})
 
     } catch (error) {
-        console.log(error)
+        console.log(error.message)
         return response.status(500).json({message: error.message})
     }
 }
@@ -81,7 +82,7 @@ const updateBook = async (request, response) => {
 
         return response.status(200).json({message: "Book Updated Successfully!"})
     } catch (error) {
-        console.log(error)
+        console.log(error.message)
         return response.status(500).json({message: error.message})
     }
 }
